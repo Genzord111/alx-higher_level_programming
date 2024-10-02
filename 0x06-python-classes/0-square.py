@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
-class Square:
-    __dict__ = {}
+"""This is my 0-Square module"""
 
+class Square:
+    """ This is a Square class"""
+    __dict__ = {}
