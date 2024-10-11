@@ -14,6 +14,9 @@ def text_indentation(text):
     while(i < size):
         new_str += text[i]
         check = text[i]
+        if (i == (size - 1)):
+            break
+
         if (check == '.' or check == ':' or check == '?'):
             new_str += '\n'
             j = i + 1
