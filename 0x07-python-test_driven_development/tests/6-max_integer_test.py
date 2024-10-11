@@ -18,3 +18,4 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([[1], [2], [3]]), [3])
         self.assertEqual(max_integer("Hello"), 'o')
         self.assertEqual(max_integer(['a', 'b', 'c']), 'c')
+        self.assertEqual(max_integer([4, 4, 4, 4]), 4)
