@@ -10,7 +10,6 @@ How are you?
 Fine:
 <BLANKLINE>
 thanks.
-<BLANKLINE>
 
 >>> text_indentation("Hi there")
 Hi there
@@ -23,7 +22,6 @@ How are you?
 Fine:
 <BLANKLINE>
 Thanks.
-<BLANKLINE>
 
 >>> text_indentation("      Hello.       ")
 Hello.
