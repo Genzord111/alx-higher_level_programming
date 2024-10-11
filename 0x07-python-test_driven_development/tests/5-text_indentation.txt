@@ -1,0 +1,66 @@
+This module tests the text_indentation function.
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello. How are you? Fine: thanks.")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+Fine:
+<BLANKLINE>
+thanks.
+<BLANKLINE>
+
+>>> text_indentation("Hi there")
+Hi there
+
+>>> text_indentation("Hello.   How are you?    Fine:   Thanks.")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+Fine:
+<BLANKLINE>
+Thanks.
+<BLANKLINE>
+
+>>> text_indentation("      Hello.       ")
+Hello.
+<BLANKLINE>
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation("")
+
+>>> text_indentation("  ")
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(12)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation("Hello\n. World")
+Hello
+.
+<BLANKLINE>
+World
+
+>>> text_indentation("Hello: World? Yes.")
+Hello:
+<BLANKLINE>
+World?
+<BLANKLINE>
+Yes.
+<BLANKLINE>
