@@ -2,6 +2,6 @@
 """This module contains the lookup function"""
 
 
-def lookup(object):
+def lookup(obj):
     """returns a list of objects attr and class"""
     return dir(object)
