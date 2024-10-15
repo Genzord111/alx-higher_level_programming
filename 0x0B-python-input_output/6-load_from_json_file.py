@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import json
 """This modeule contains the load_from_json_file function"""
 
