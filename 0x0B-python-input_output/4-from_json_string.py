@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-import json
 """This modeule contains the t0_json_string function"""
+
+
+import json
 
 
 def from_json_string(my_str):
