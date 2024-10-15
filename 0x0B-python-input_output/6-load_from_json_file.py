@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import json
 """This modeule contains the load_from_json_file function"""
 
