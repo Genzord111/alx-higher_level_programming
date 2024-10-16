@@ -3,18 +3,27 @@
 
 
 def pascal_triangle(n):
-    """returns a pascal triangle"""
+    """Prints a pascal triangle"""
 
+    one = [1, 1]
+    my_list = [[1], [1, 1]]
     if n <= 0:
         return []
+    elif n == 1:
+        return [my_list[0]]
+    elif n == 2:
+        return my_list
 
-    my_list = [[1]]
-    for i in range(1, n):
-        prev_row = my_list[-1]
-        new_row = [1]  # Start each row with 1
-        for j in range(1, len(prev_row)):
-            new_row.append(prev_row[j - 1] + prev_row[j])
-            new_row.append(1)  # End each row with 1
-            my_list.append(new_row)
+    if n > 2:
+        for i in range(n - 2):
+            one = [1, 1]
+            mid = []
+            new_list = my_list[-1]
+            i = 0
+            while i != len(new_list) - 1:
+                mid.append(new_list[i] + new_list[i+1])
+                i += 1
+            one[1:1] = mid
+            my_list.append(one)
 
     return my_list
