@@ -39,6 +39,13 @@ Traceback (most recent call last):
     ...
 TypeError: value must be an integer
 
+>>> bg.integer_validator("", 1)
+
+>>> bg.integer_validator("small", 1)
+
+>>> bg.integer_validator("first", 10)
+>>> bg.integer_validator("second", 15)
+
 >>> hasattr(BaseGeometry, 'area')
 True
 >>> hasattr(BaseGeometry, 'integer_validator')
