@@ -25,3 +25,5 @@ def pascal_triangle(n):
                 i += 1
             one[1:1] = mid
             my_list.append(one)
+
+    return my_list
