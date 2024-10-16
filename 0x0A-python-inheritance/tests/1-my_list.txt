@@ -1,21 +1,25 @@
-# test_mylist.txt
+This testfile runs the 1-my_list module
 
 >>> MyList = __import__('1-my_list').MyList
 
-# Test empty list
+
 >>> my_list = MyList()
 
 >>> my_list.print_sorted()
 []
 
-# Test list with one element
 >>> my_list = MyList([1])
-
 >>> my_list.print_sorted()
 [1]
 
-# Test list with multiple elements
->>> my_list = MyList([1, 4, 2, 3, 5])
+>>> my_list.append(10)
+>>> my_list.append(4)
+>>> my_list.print_sorted()
+[1, 4, 10]
 
+>>> my_list
+[1, 10, 4]
+
+>>> my_list = MyList([1, 4, 2, 3, 5])
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
