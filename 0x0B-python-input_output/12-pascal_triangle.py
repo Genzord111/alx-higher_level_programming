@@ -3,14 +3,14 @@
 
 
 def pascal_triangle(n):
-    """Prints a pascal triangle"""
+    """returns a pascal triangle"""
 
     one = [1, 1]
     my_list = [[1], [1, 1]]
     if n <= 0:
         return []
     elif n == 1:
-        return my_list[0]
+        return [my_list[0]]
     elif n == 2:
         return my_list
 
