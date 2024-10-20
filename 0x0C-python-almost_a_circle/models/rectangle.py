@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""This module contains the Rectangle class"""
+from models.base import Base
+
+
 class Rectangle(Base):
     """This  class inherits from Base"""
 
@@ -15,9 +19,9 @@ class Rectangle(Base):
         """checks if para is integer and non zero"""
         if not isinstance(dimension, int):
             raise TypeError(f"{name} must be an integer")
-        if dimension <= 0 and greater_than_zero is True:
+        if dimension <= 0 and greater_than_zero == True:
             raise ValueError(f"{name} must be > 0")
-        if dimension < 0 and greater_than_zero is False:
+        if dimension < 0 and greater_than_zero == False:
             raise ValueError(f"{name} must be >= 0")
 
     @property
@@ -63,8 +67,10 @@ class Rectangle(Base):
         """Setter for y attribute"""
         self.dimension_validator('y', y, False)
         self.__y = y
-
+    
     def __str__(self):
+        """Returns the class and it's attributes as string"""
+
         return f'[Rectangle] ({self.id}) {self.__x}/{self.__y}\
  - {self.__width}/{self.__height}'
 
@@ -79,15 +85,32 @@ class Rectangle(Base):
         for j in range(self.__height):
             print(self.__x * " " + self.__width * "#")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates the values of instance attributes"""
-        if len(args) > 0:
-            self.id = args[0]
-        if len(args) > 1:
-            self.width = args[1]
-        if len(args) > 2:
-            self.height = args[2]
-        if len(args) > 3:
-            self.x = args[3]
-        if len(args) > 4:
-            self.y = args[4]
+        if len(args) != 0:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.width = args[1]
+            if len(args) > 2:
+                self.height = args[2]
+            if len(args) > 3:
+                self.x = args[3]
+            if len(args) > 4:
+                self.y = args[4]
+            
+            return
+        else:
+            if kwargs.get("id") is not None:
+                self.id = kwargs.get("id")
+            if kwargs.get("width") is not None:
+                self.width = kwargs.get("width")
+            if kwargs.get("height") is not None:
+                self.height = kwargs.get("height")
+            if kwargs.get("x") is not None:
+                self.x = kwargs.get("x")
+            if kwargs.get("y") is not None:
+                self.y = kwargs.get("y")
+            
+    def to_dictionary(self):
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
