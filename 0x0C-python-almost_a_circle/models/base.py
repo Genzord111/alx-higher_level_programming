@@ -37,11 +37,11 @@ class Base:
         """writes the JSON string representation of list_objs to a
         file of 'classname.json"""
         atrribute_lists = []
-        if list_objs is not None:
-            for i in list_objs:
-                if isinstance(i, cls):
-                    file_name = f"{i.__class__.__name__}.json"
-                    atrribute_lists.append(i.to_dictionary())
+        if list_objs is not None and isinstance(list_objs, list):
+            for instance in list_objs:
+                if isinstance(instance, cls):
+                    file_name = f"{instance.__class__.__name__}.json"
+                    atrribute_lists.append(instance.to_dictionary())
 
         with open(file_name, 'w') as f:
             json.dump(json.loads(cls.to_json_string(atrribute_lists)), f)
