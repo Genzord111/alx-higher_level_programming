@@ -50,7 +50,11 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        container_class = cls(1, 1)
+        if cls.__name__ == "Square":
+            container_class = cls(1)
+        else:
+            container_class = cls(1, 1)
+
         container_class.update(**dictionary)
         return container_class
 
