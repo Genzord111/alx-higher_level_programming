@@ -23,6 +23,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """converts a json string to its python equivalent and stores 
+        it in a list"""
         attribute_list = []
         if json_string is not None:
             attribute_list = json.loads(json_string)
@@ -30,31 +32,35 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes the JSON string representation of list_objs to a file"""
+        """writes the JSON string representation of list_objs to a file of Base"""
         atrribute_lists = []
         if list_objs is not None:
-            for i in list_objs:
+           for i in list_objs:
                 if isinstance(i, cls):
                     file_name = f"{i.__class__.__name__}.json"
                     atrribute_lists.append(i.to_dictionary())
 
         with open(file_name, 'w') as f:
-            json.dump(atrribute_lists, f)
+            json.dump(cls.to_json_string(atrribute_lists), f)
 
     @classmethod
     def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
         container_class = cls(1, 1, 1)
         container_class.update(**dictionary)
         return container_class
 
     @classmethod
     def load_from_file(cls):
+        """returns a list of instances from json file created
+        using the save_to_file method"""
         class_list = []
         file_name = f"{cls.__name__}.json"
+        print(file_name)
         try:
             with open(file_name, 'r') as f:
-                class_list = json.load(f)
+                for ele in cls.from_json_string(json.load(f)):
+                    class_list.append(cls.create(**ele))
         except IOError:
-            pass
-
+            pass    
         return class_list
