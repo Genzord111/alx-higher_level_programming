@@ -19,7 +19,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns dictionary of instance attributes as JSON string"""
-        if list_dictionaries is not None or list_dictionaries != ""
+        if list_dictionaries is not None and list_dictionaries != {}:
             return json.dumps(list_dictionaries)
         return "[]"
 
