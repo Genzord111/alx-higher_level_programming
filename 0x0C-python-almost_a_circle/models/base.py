@@ -67,8 +67,7 @@ class Base:
         print(file_name)
         try:
             with open(file_name, 'r') as f:
-                json_string = cls.to_json_string(json.load(f))
-                for ele in cls.from_json_string(json_string):
+                for ele in cls.from_json_string(f.read()):
                     class_list.append(cls.create(**ele))
         except IOError:
             pass
