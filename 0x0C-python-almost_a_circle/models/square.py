@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """This module contains the Square class"""
 from models.rectangle import Rectangle
-import json
 
 
 class Square(Rectangle):
