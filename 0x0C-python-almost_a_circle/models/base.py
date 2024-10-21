@@ -15,12 +15,12 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns dictionary of instance attributes as JSON string"""
         return json.dumps(list_dictionaries)
-    
+
     @staticmethod
     def from_json_string(json_string):
         attribute_list = []
@@ -30,14 +30,14 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes the JSON string representation of list_objs to a file of Base"""
+        """writes the JSON string representation of list_objs to a file"""
         atrribute_lists = []
         if list_objs is not None:
-           for i in list_objs:
+            for i in list_objs:
                 if isinstance(i, cls):
                     file_name = f"{i.__class__.__name__}.json"
                     atrribute_lists.append(i.to_dictionary())
-        
+
         with open(file_name, 'w') as f:
             json.dump(atrribute_lists, f)
 
@@ -46,15 +46,14 @@ class Base:
         container_class = cls(1, 1, 1)
         container_class.update(**dictionary)
         return container_class
-    
+
     @classmethod
     def load_from_file(cls):
         class_list = []
         file_name = f"{cls.__name__}.json"
-        print(file_name)
         try:
             with open(file_name, 'r') as f:
-                class_list = json.load(file_name)
+                class_list = json.load(f)
         except IOError:
             pass
 

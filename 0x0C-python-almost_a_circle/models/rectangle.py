@@ -19,9 +19,9 @@ class Rectangle(Base):
         """checks if para is integer and non zero"""
         if not isinstance(dimension, int):
             raise TypeError(f"{name} must be an integer")
-        if dimension <= 0 and greater_than_zero == True:
+        if dimension <= 0 and greater_than_zero is True:
             raise ValueError(f"{name} must be > 0")
-        if dimension < 0 and greater_than_zero == False:
+        if dimension < 0 and greater_than_zero is False:
             raise ValueError(f"{name} must be >= 0")
 
     @property
@@ -67,7 +67,7 @@ class Rectangle(Base):
         """Setter for y attribute"""
         self.dimension_validator('y', y, False)
         self.__y = y
-    
+
     def __str__(self):
         """Returns the class and it's attributes as string"""
 
@@ -98,8 +98,9 @@ class Rectangle(Base):
                 self.x = args[3]
             if len(args) > 4:
                 self.y = args[4]
-            
+
             return
+
         else:
             if kwargs.get("id") is not None:
                 self.id = kwargs.get("id")
@@ -111,6 +112,7 @@ class Rectangle(Base):
                 self.x = kwargs.get("x")
             if kwargs.get("y") is not None:
                 self.y = kwargs.get("y")
-            
+
     def to_dictionary(self):
+        """returns the dictionary representation of a Square"""
         return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
