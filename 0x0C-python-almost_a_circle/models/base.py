@@ -28,7 +28,7 @@ class Base:
         """converts a json string to its python equivalent and stores
         it in a list"""
         attribute_list = []
-        if json_string is not None or len(json_string) == 0:
+        if json_string is not None:
             attribute_list = json.loads(json_string)
         return attribute_list
 
