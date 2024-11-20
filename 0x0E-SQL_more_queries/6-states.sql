@@ -1,0 +1,1 @@
+-- that creates the database hbtn_0d_usa and the table states wit id as a primary key

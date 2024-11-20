@@ -1,0 +1,1 @@
+-- lists all cities contained in the database Each record should display: cities.id - cities.name - states.name
