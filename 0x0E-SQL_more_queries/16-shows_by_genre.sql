@@ -1,0 +1,3 @@
+-- If a show doesn’t have a genre, display NULL in the genre column
+-- Each record should display: tv_shows.title - tv_genres.name
+-- Results must be sorted in ascending order by the show title and genre name

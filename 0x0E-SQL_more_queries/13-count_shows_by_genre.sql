@@ -1,0 +1,3 @@
+-- script that lists all genres from hbtn_0d_tvshows
+-- Don’t display a genre that doesn’t have any shows linked
+-- Results must be sorted in descending order by the number of shows linked

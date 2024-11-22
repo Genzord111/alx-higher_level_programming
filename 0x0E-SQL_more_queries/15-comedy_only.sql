@@ -1,0 +1,3 @@
+-- The tv_genres table contains only one record where name = Comedy (but the id can be different)
+-- Each record should display: tv_shows.title
+-- Results must be sorted in ascending order by the show table
