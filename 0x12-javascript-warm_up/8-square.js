@@ -8,6 +8,6 @@ if (isNaN(args[2])) {
   const size = parseInt(args[2]);
 
   for (let init = 0; init < size; init++) {
-    console.log('x'.repeat(size));
+    console.log('X'.repeat(size));
   }
 }
